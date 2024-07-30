@@ -26,3 +26,18 @@ class TestEmployee:
         
         # Then
         assert result == expected_result
+        
+    def test_given_salary_decrease_when_100000_then_return_90000(self):
+        # Given
+        input_salary = 100000
+        input_fullname = 'Elon Musk'
+        expected_result = 90000
+        
+        employee = Employee(input_fullname, '18/04/2005', input_salary)
+        
+        # When
+        employee.decrease_salary()
+        result = employee.salary
+        
+        # Then
+        assert result == expected_result

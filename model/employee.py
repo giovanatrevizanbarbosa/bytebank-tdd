@@ -28,6 +28,12 @@ class Employee:
         if value > 1000:
             value = 0
         return value
+    
+    def decrease_salary(self):
+        surnames = ['Musk', 'Gates']
+        if self._salary >= 100000 and (self.surname() in surnames):
+            decrease = self._salary * 0.1
+            self._salary = self._salary - decrease
 
     def __str__(self):
         return f'Employee({self._fullname}, {self._birth_date}, {self._salary})'
