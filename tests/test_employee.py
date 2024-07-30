@@ -33,11 +33,11 @@ class TestEmployee:
         input_fullname = 'Elon Musk'
         expected_result = 90000
         
-        employee = Employee(input_fullname, '18/04/2005', input_salary)
+        employee = Employee(input_fullname, '28/06/1971', input_salary)
         
         # When
         employee.decrease_salary()
-        result = employee.salary
+        result = employee._salary
         
         # Then
         assert result == expected_result

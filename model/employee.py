@@ -29,9 +29,12 @@ class Employee:
             value = 0
         return value
     
-    def decrease_salary(self):
+    def is_associate(self):
         surnames = ['Musk', 'Gates']
-        if self._salary >= 100000 and (self.surname() in surnames):
+        return (self.surname() in surnames) and (self._salary >= 100000)
+    
+    def decrease_salary(self):
+        if self.is_associate():
             decrease = self._salary * 0.1
             self._salary = self._salary - decrease
 
