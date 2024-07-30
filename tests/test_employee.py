@@ -5,10 +5,10 @@ from model.employee import Employee
 class TestEmployee:
     def test_given_birth_date_when_18_04_2005_then_return_19(self):
         # Given
-        input = '18/04/2005'
+        input_birth_date = '18/04/2005'
         expected_result = 19
         
-        employee = Employee('Someone', input, 1000)
+        employee = Employee('Someone', input_birth_date, 1000)
         
         # When
         result = employee.age()
@@ -18,10 +18,10 @@ class TestEmployee:
         
     def test_given_fullname_when_Giovana_Trevizan_then_return_Trevizan(self):
         # Given
-        input = 'Giovana Trevizan'
+        input_fullname = 'Giovana Trevizan'
         expected_result = 'Trevizan'
         
-        employee = Employee(input, '18/04/2005', 1000)
+        employee = Employee(input_fullname, '18/04/2005', 1000)
         
         # When
         result = employee.surname()
@@ -60,7 +60,7 @@ class TestEmployee:
     @mark.calculate_salary_bonus
     def test_given_calculate_salary_bonus_when_200000_return_exception(self):
         with pytest.raises(Exception):  
-        # Given
+            # Given
             input_salary = 200000
             
             employee = Employee('Rebecca Andrade', '08/04/1999', input_salary)
