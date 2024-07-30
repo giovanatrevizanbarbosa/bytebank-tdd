@@ -23,7 +23,7 @@ class Employee:
         actual_year = date.today().year
         return actual_year - int(birth_year)
 
-    def calculate_bonus(self):
+    def calculate_salary_bonus(self):
         value = self._salary * 0.1
         if value > 1000:
             raise Exception('O SALÁRIO É MUITO ALTO PARA RECEBER BÔNUS.')

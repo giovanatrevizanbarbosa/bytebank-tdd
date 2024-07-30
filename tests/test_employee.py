@@ -1,3 +1,4 @@
+import pytest
 from model.employee import Employee
 
 class TestEmployee:
@@ -46,9 +47,21 @@ class TestEmployee:
         input_salary = 2000
         expected_result = 200
         
-        employee = Employee('Ada Lovelace', '28/06/1971', input_salary)
+        employee = Employee('Ada Lovelace', '10/12/1815', input_salary)
         
         # When
-        result = employee.calculate_bonus()
+        result = employee.calculate_salary_bonus()
         # Then
         assert result == expected_result
+        
+    def test_given_calculate_salary_bonus_when_200000_return_exception(self):
+        with pytest.raises(Exception):  
+        # Given
+            input_salary = 200000
+            
+            employee = Employee('Rebecca Andrade', '08/04/1999', input_salary)
+            
+            # When
+            result = employee.calculate_salary_bonus()
+            # Then
+            assert result
