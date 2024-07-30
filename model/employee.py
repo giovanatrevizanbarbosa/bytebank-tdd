@@ -26,7 +26,7 @@ class Employee:
     def calculate_bonus(self):
         value = self._salary * 0.1
         if value > 1000:
-            value = 0
+            raise Exception('O SALÁRIO É MUITO ALTO PARA RECEBER BÔNUS.')
         return value
     
     def is_associate(self):

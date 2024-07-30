@@ -30,14 +30,25 @@ class TestEmployee:
     def test_given_salary_decrease_when_100000_then_return_90000(self):
         # Given
         input_salary = 100000
-        input_fullname = 'Elon Musk'
         expected_result = 90000
         
-        employee = Employee(input_fullname, '28/06/1971', input_salary)
+        employee = Employee('Elon Musk', '28/06/1971', input_salary)
         
         # When
         employee.decrease_salary()
         result = employee._salary
         
+        # Then
+        assert result == expected_result
+        
+    def test_given_salary_bonus_when_2000_then_return_200(self):
+        # Given
+        input_salary = 2000
+        expected_result = 200
+        
+        employee = Employee('Ada Lovelace', '28/06/1971', input_salary)
+        
+        # When
+        result = employee.calculate_bonus()
         # Then
         assert result == expected_result
