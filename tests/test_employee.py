@@ -1,4 +1,5 @@
 import pytest
+from pytest import Mark, mark
 from model.employee import Employee
 
 class TestEmployee:
@@ -28,6 +29,7 @@ class TestEmployee:
         # Then
         assert result == expected_result
         
+    @mark.calculate_salary_bonus
     def test_given_salary_decrease_when_100000_then_return_90000(self):
         # Given
         input_salary = 100000
@@ -42,6 +44,7 @@ class TestEmployee:
         # Then
         assert result == expected_result
         
+    @mark.calculate_salary_bonus
     def test_given_salary_bonus_when_2000_then_return_200(self):
         # Given
         input_salary = 2000
@@ -53,7 +56,8 @@ class TestEmployee:
         result = employee.calculate_salary_bonus()
         # Then
         assert result == expected_result
-        
+    
+    @mark.calculate_salary_bonus
     def test_given_calculate_salary_bonus_when_200000_return_exception(self):
         with pytest.raises(Exception):  
         # Given
